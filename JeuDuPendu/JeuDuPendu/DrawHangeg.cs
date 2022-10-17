@@ -6,11 +6,17 @@ using System.Threading.Tasks;
 
 namespace JeuDuPendu
 {
+    /// <summary>
+    /// This class draws the hangman, its a proof of principal it can be upgraded a lot by checking the char by char rather than list by list
+    /// </summary>
     public class DrawHangeg
     {
         public int fail = 0;
         List<List<string>> drawing = new List<List<string>>();
 
+        /// <summary>
+        /// Construtor sets up the drawing in some sor of data structure [improovement needed]
+        /// </summary>
         public DrawHangeg()
         {
             List<string> charList_6 = new List<string>() { " ", "|", "_", "_", "_", "_", "\n" };
@@ -28,13 +34,27 @@ namespace JeuDuPendu
             drawing.Add(charList_1);
         }
 
-        public void Draw()
+        /// <summary>
+        /// Draws the HangMan depending on the status of failure of the player
+        /// Private to make sure not every one can cces it 
+        /// </summary>
+        private void Draw()
         {
             fail++;
             for (int i = 0; i < fail; i++)
             {
                 drawing[i].ForEach(line => Console.Write(line));
             }
+        }
+
+        /// <summary>
+        /// To set up an action to be able to access the Draw fonction
+        /// </summary>
+        /// <param name="draw">action to draw</param>
+        public void SetUpDrawCallBack(out Action draw)
+        {
+            draw = null;
+            draw += Draw;
         }
     }
 }

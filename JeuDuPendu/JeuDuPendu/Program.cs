@@ -5,8 +5,14 @@ using System.Data;
 
 namespace LeJeuDuPendue
 {
+    /// <summary>
+    /// Main class of the Hangman Game
+    /// </summary>
     class JeuDUPendu
     {
+        /// <summary>
+        /// List of the words in the game
+        /// </summary>
         public static List<string> words = new List<string>();
 
         public static void Main()
@@ -15,16 +21,18 @@ namespace LeJeuDuPendue
             StartGame();
         }
 
+        /// <summary>
+        /// Start the game should only be called once
+        /// </summary>
         public static void StartGame()
         {
             bool isStillPlaying = true;
             Player newPlayer = new Player(AskForName(), 0);
             Console.WriteLine("hi " + newPlayer.name + " welcome back!!!!!");
-            //HighScore highScore = new HighScore();
+            HighScore highScore = new HighScore();
 
             while (isStillPlaying)
             {
-                ///Select Game Options
                 string word = GetARandomWord();
                 GameLoop gameLoop = new GameLoop(word, newPlayer);
                 gameLoop.Start();
@@ -32,10 +40,14 @@ namespace LeJeuDuPendue
                 isStillPlaying = AskIfWantsToContinue();
             }
 
-            //highScore.AddANewHighScore(newPlayer);
-            //highScore.SaveHighScore();
+            highScore.AddANewHighScore(newPlayer);
+            highScore.SaveHighScore();
         }
 
+        /// <summary>
+        /// A fonction to ask the player to prompt his name
+        /// </summary>
+        /// <returns>the name of the player</returns>
         public static string AskForName()
         {
             Console.WriteLine("First what is your name ?");
@@ -43,6 +55,10 @@ namespace LeJeuDuPendue
             return name;
         }
 
+        /// <summary>
+        /// A Fonction to ask if the player wants to continue play the game after a fail or a success
+        /// </summary>
+        /// <returns></returns>
         public static bool AskIfWantsToContinue()
         {
             Console.WriteLine("Do you wish to try again ?");
@@ -59,12 +75,15 @@ namespace LeJeuDuPendue
             return false;
         }
 
+        /// <summary>
+        /// A fonction to init the words used for the game 
+        /// </summary>
         public static void SetWordList()
         {
             string[] file_words = new string[0];
             try
             {
-                file_words = File.ReadAllLines((@"D:\\01_IPI_Cours\\cours\\.Net\\JeuDuPendu\\JeuDuPendu" + "//textFile1.txt"));
+                file_words = File.ReadAllLines((@"D:\01_IPI_Cours\Git\HangMan\JeuDuPendu\JeuDuPendu" + "//textFile1.txt"));
 
             }
             catch(Exception e)
@@ -80,6 +99,10 @@ namespace LeJeuDuPendue
             words.Add("roblochon");
         }
 
+        /// <summary>
+        /// A fonction to get a random word
+        /// </summary>
+        /// <returns>A random word from the list</returns>
         public static string GetARandomWord()
         {
             Random random = new Random();

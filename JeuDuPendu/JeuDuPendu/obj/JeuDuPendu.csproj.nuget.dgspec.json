@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\01_IPI_Cours\\cours\\.Net\\JeuDuPendu\\JeuDuPendu\\JeuDuPendu.csproj": {}
+    "D:\\01_IPI_Cours\\Git\\HangMan\\JeuDuPendu\\JeuDuPendu\\JeuDuPendu.csproj": {}
   },
   "projects": {
-    "D:\\01_IPI_Cours\\cours\\.Net\\JeuDuPendu\\JeuDuPendu\\JeuDuPendu.csproj": {
+    "D:\\01_IPI_Cours\\Git\\HangMan\\JeuDuPendu\\JeuDuPendu\\JeuDuPendu.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\01_IPI_Cours\\cours\\.Net\\JeuDuPendu\\JeuDuPendu\\JeuDuPendu.csproj",
+        "projectUniqueName": "D:\\01_IPI_Cours\\Git\\HangMan\\JeuDuPendu\\JeuDuPendu\\JeuDuPendu.csproj",
         "projectName": "JeuDuPendu",
-        "projectPath": "D:\\01_IPI_Cours\\cours\\.Net\\JeuDuPendu\\JeuDuPendu\\JeuDuPendu.csproj",
+        "projectPath": "D:\\01_IPI_Cours\\Git\\HangMan\\JeuDuPendu\\JeuDuPendu\\JeuDuPendu.csproj",
         "packagesPath": "C:\\Users\\chant\\.nuget\\packages\\",
-        "outputPath": "D:\\01_IPI_Cours\\cours\\.Net\\JeuDuPendu\\JeuDuPendu\\obj\\",
+        "outputPath": "D:\\01_IPI_Cours\\Git\\HangMan\\JeuDuPendu\\JeuDuPendu\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\chant\\AppData\\Roaming\\NuGet\\NuGet.Config"

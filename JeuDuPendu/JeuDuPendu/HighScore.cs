@@ -10,9 +10,6 @@ using System.Threading.Tasks;
 
 namespace JeuDuPendu
 {
-    /// <summary>
-    /// Work in progreess
-    /// </summary>
     public class HighScore
     {
         Dictionary<string, int> highScore_list = new Dictionary<string, int>();
@@ -23,22 +20,29 @@ namespace JeuDuPendu
             HighScoreShow();
         }
 
+        /// <summary>
+        /// Show the high scor panel
+        /// </summary>
         public void HighScoreShow()
         {
+            Console.WriteLine();
             Console.WriteLine("High Score");
             for (int i  = 0; i < highScore_list.Count; i++)
             {
                 Console.WriteLine(highScore_list.ElementAt(i));
             }
+            Console.WriteLine();
         }
+
         /// <summary>
-        /// Work in progress
+        /// Load the high score file
         /// </summary>
         public void HighScoreLoad()
         {
             try
             {
-                highScore_list = JsonSerializer.Deserialize<Dictionary<string, int>>(Directory.GetCurrentDirectory() + "//SaveFile.json");
+                string json_string = File.ReadAllText(Directory.GetCurrentDirectory() + "//SaveFile.json");
+                highScore_list = JsonSerializer.Deserialize<Dictionary<string, int>>(json_string);
             }
             catch (Exception e)
             {
@@ -46,11 +50,18 @@ namespace JeuDuPendu
             }
         }
 
+        /// <summary>
+        /// Add a new high score profile
+        /// </summary>
+        /// <param name="player"> the player ou want to add</param>
         public void AddANewHighScore(Player player)
         {
             highScore_list.Add(player.name, player.score);
         }
 
+        /// <summary>
+        /// Save the current high score
+        /// </summary>
         public void SaveHighScore()
         {
             string json_string = JsonSerializer.Serialize(highScore_list);

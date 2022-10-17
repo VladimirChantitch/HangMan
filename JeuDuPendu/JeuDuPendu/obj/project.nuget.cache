@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "i4QLvoJBWTWm9AgGtYdSh0NDMvjIoItU9/zPCzQ5wHAzm23x+LRBkLzoIVZpADwpwevjy5Ox6yAF24ZOTb0t1Q==",
+  "dgSpecHash": "2Rxl0zpF40iMdGaHSPWPAwenxzjb3s6maRLMyDtk20MC5s1eW88BbLnFxk2Ykq9NdVWf3cBu/61ALrzCvX0WbA==",
   "success": true,
-  "projectFilePath": "D:\\01_IPI_Cours\\cours\\.Net\\JeuDuPendu\\JeuDuPendu\\JeuDuPendu.csproj",
+  "projectFilePath": "D:\\01_IPI_Cours\\Git\\HangMan\\JeuDuPendu\\JeuDuPendu\\JeuDuPendu.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
