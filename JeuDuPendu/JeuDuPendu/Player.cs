@@ -8,8 +8,17 @@ namespace JeuDuPendu
 {
     public class Player
     {
+        /// <summary>
+        /// Name of the player
+        /// </summary>
         public string name { get; private set; }
+        /// <summary>
+        /// Current score of the player
+        /// </summary>
         public int score { get; private set; }
+        /// <summary>
+        /// Is the player able to win without failling
+        /// </summary>
         public bool serialSuccess = false;
 
         public Player(string name, int score)
@@ -18,6 +27,9 @@ namespace JeuDuPendu
             this.score = score;
         }
 
+        /// <summary>
+        /// Increasse the score of the player
+        /// </summary>
         public void AddScore()
         {
             if (serialSuccess)
@@ -31,6 +43,9 @@ namespace JeuDuPendu
             }
         }
 
+        /// <summary>
+        /// Reset The score of the player when he fails
+        /// </summary>
         public void ResetScore()
         {
             score = 0;
